@@ -9,7 +9,6 @@ def call(env)
 
   if @@items.each do |item|
     resp.write "#{item.price}\n"
-  else
   end
   resp.finish
 end
