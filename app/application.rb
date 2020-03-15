@@ -10,7 +10,7 @@ def call(env)
       resp.status=400
       resp.write "Route not found"
     elsif @@items.each do |item|
-      puts item.price
+      resp.write "#{item.price}\n"
     end
     resp.finish
   end
