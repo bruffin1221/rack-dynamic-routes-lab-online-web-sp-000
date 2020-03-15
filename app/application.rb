@@ -17,7 +17,7 @@ def call(env)
     @@items.find{|i| i.price==item_price}
       resp.write item.price
     end
-    resp.finished
+    resp.finish
   end
 end
 
