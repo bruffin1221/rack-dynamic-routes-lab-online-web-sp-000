@@ -7,7 +7,7 @@ def call(env)
   req=Rack::Request.new(env)
 
 
-  if req,path=="items/"
+  if req.path=="items/"
     @@items.each do |item|
     resp.write "#{item.price}\n"
   else reg.path=="/test"
