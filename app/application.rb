@@ -11,7 +11,7 @@ def call(env)
     stuff=req.path.split("/items/").last
 
     item_price=@@items.find{|i| i.price==stuff}
-    resp.write "#{item_price}"
+    resp.write item_price
   elsif resp.write "Route not found"
     resp.status=404
   end
