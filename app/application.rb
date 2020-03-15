@@ -13,12 +13,12 @@ def call(env)
   elsif req.path.match("/items/")
 
     item_price=req.path("/items/").last
-
     @@items.find{|i| i.price==item_price}
-      resp.write item.price
-    end
-    resp.finish
+    resp.write item.price
   end
+  resp.finish
+end
+
 end
 
 
