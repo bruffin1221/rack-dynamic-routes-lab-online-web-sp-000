@@ -12,7 +12,7 @@ def call(env)
 
   if stuff
     item=@@items.find{|i| i.price==stuff}
-    resp.write item.price
+    resp.write stuff.price
   end
 
   #elsif resp.write "Route not found"
