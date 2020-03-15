@@ -12,7 +12,7 @@ def call(env)
     resp.write "#{item.price}\n"
   end
 elsif req.path=="/test"
-    resp.write "Item not found"
+    resp.write "Route not found"
     resp.status=400
   end
   resp.finish
