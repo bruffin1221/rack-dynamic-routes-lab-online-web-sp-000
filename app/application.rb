@@ -10,9 +10,12 @@ def call(env)
   if req.path=="/test/"
     resp.write "Route not found"
     resp.status=400
-  elsif req.path=="/items/"
-    @@items.each do |item|
-      resp.write "#{item.price}\n"
+  elsif req.path.match("/items/")
+
+    item_price=req.path("/items/").last
+
+    @@items.find{|i| i.price==item_price}
+      resp.write item.price
     end
     resp.finished
   end
