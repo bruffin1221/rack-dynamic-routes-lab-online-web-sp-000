@@ -14,8 +14,10 @@ def call(env)
     @@items.each do |item|
       resp.write "#{item.price}\n"
     end
-  resp.finish
+    resp.finished
+  end
 end
+
 
 
 end
