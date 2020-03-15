@@ -7,11 +7,11 @@ def call(env)
   req=Rack::Request.new(env)
 
 
-  if reg.path=="items/"
+  if req.path=="items/"
     @@items.each do |item|
     resp.write "#{item.price}\n"
   end
-  elsif reg.path=="/test"
+elsif req.path=="/test"
     resp.write "Item not found"
     resp.status=400
   end
