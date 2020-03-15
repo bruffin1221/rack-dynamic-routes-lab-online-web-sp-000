@@ -1,6 +1,6 @@
 class Application
 
-@@item
+@@item=[]
 
 def call(env)
   resp=Rack::Response.new
@@ -9,8 +9,14 @@ def call(env)
   if req.path==="/test"
       resp.status=400
       resp.write "Route not found"
-    else req.path=="/item"
-       
+    elsif @@items.each do |item|
+      puts item.price
+    end
+    resp.finish
+  end
+end 
+
+
 
   end
 end
