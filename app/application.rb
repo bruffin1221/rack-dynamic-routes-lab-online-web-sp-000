@@ -10,6 +10,7 @@ def call(env)
   if req.path=="items/"
     @@items.each do |item|
     resp.write "#{item.price}\n"
+  end 
   elsif reg.path=="/test"
     resp.write "Item not found"
     resp.status=400
