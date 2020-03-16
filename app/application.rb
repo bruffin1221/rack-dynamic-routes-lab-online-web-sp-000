@@ -9,7 +9,7 @@ def call(env)
   if req.path.match(/items\/.+/)
 
     item_price=req.path.split("/items/").last
-    item=@@items.find{|i| i.price==item_price}
+    item=@@items.find{|i| i.name==item_price}
 
   if item
     resp.write item.price
