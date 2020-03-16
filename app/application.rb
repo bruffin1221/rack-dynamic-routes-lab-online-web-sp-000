@@ -14,9 +14,8 @@ def call(env)
   if item
     resp.write item.price
   end
-
-  #elsif resp.write "Route not found"
-  #  resp.status=404
+  elsif resp.write "Route not found"
+    resp.status=404
   end
   resp.finish
 end
