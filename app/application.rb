@@ -11,7 +11,7 @@ def call(env)
     stuff=req.path.split("/items/").last
     item=@@items.find{|i| i.price==stuff}
 
-  if stuff
+  if item
     resp.write item.price
   end
 
