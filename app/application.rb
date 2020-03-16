@@ -8,11 +8,11 @@ def call(env)
 
   if req.path.match(/items\/.+/)
 
-    stuff=req.path.split.last
+    stuff=req.path.split("/item/").last
+    item=@@items.find{|i| i.price==stuff}
 
   if stuff
-    item=@@items.find{|i| i.price==stuff}
-    resp.write stuff.price
+    resp.write item.price
   end
 
   #elsif resp.write "Route not found"
